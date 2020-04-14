@@ -45,13 +45,31 @@ describe('Park', function() {
       assert.deepStrictEqual(actual, 0);
     });
 
-    xit('should be able to find the dinosaur that attracts the most visitors', function(){
-      
+    it('should be able to find the dinosaur that attracts the most visitors', function(){
+      park.addDinosaur('Stegosaurus', 'Herbivore', 30);
+      park.addDinosaur('Triceratops', 'Herbivore', 15);
+      const actual = park.dinosaurCollection.sort(function(a, b){
+        return b.guestsAttractedPerDay - a.guestsAttractedPerDay;
+      });
+      assert.deepStrictEqual(actual, ['Stegosaurus', 'Triceratops'])
     });
 
-    xit('should be able to find all dinosaurs of a particular species');
+    xit('should be able to find all dinosaurs of a particular species', function(){
+      park.addDinosaur('Stegosaurus', 'Herbivore', 30);
+      park.addDinosaur('Triceratops', 'Herbivore', 15);
+      park.findDinosaurBySpecies();
+      assert.deepStrictEqual(actual, ['Stegosaurus'])
+    });
 
   });
+
+
+
+
+
+
+
+
 
   xit('should be able to calculate the total number of visitors per day');
 

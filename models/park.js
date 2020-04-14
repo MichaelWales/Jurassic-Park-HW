@@ -28,7 +28,13 @@ Park.prototype.removeDinosaur = function(){
 //   });
 // }
 
-
+// Park.prototype.totalVisitorsPerDay = function(){
+//   let dailyVisitors = 0
+//   for (var currentDino of this.dinosaurCollection){
+//     dailyVisitors + currentDino.guestsAttractedPerDay
+//   }
+//   return dailyVisitors
+// }
 
 
 

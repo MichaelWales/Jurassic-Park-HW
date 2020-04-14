@@ -61,7 +61,12 @@ describe('Park', function() {
 
   });
 
-  xit('should be able to calculate the total number of visitors per day');
+  xit('should be able to calculate the total number of visitors per day', function(){
+    park.addDinosaur('Stegosaurus', 'Herbivore', 30);
+    park.addDinosaur('Triceratops', 'Herbivore', 15);
+    const actual = park.totalVisitorsPerDay();
+    assert.strictEqual(actual, 45)
+  });
 
   xit('should be able to calculate the total number of visitors per year');
 

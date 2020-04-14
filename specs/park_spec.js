@@ -20,18 +20,36 @@ describe('Park', function() {
     assert.strictEqual(actual, 20);
   });
 
-  it('should have a collection of dinosaurs', function(){
-    const actual = park.dinosaurCollection;
-    assert.deepStrictEqual(actual, []);
+  describe('Collection', function(){
+
+    it('should have a collection of dinosaurs', function(){
+      const actual = park.dinosaurCollection;
+      assert.deepStrictEqual(actual, []);
+    });
+
+    it('should be able to return the size of the dinosaur collection', function(){
+      const actual = park.sizeOfCollection();
+      assert.deepStrictEqual(actual, 0)
+    });
+
+    it('should be able to add a dinosaur to its collection', function(){
+      park.addDinosaur('Stegosaurus', 'Herbivore', 30);
+      const actual = park.sizeOfCollection();
+      assert.deepStrictEqual(actual, 1);
+    });
+
+    it('should be able to remove a dinosaur from its collection', function(){
+      park.addDinosaur('Stegosaurus', 'Herbivore', 30);
+      park.removeDinosaur();
+      const actual = park.sizeOfCollection();
+      assert.deepStrictEqual(actual, 0);
+    });
+
+    xit('should be able to find the dinosaur that attracts the most visitors');
+
+    xit('should be able to find all dinosaurs of a particular species');
+
   });
-
-  xit('should be able to add a dinosaur to its collection');
-
-  xit('should be able to remove a dinosaur from its collection');
-
-  xit('should be able to find the dinosaur that attracts the most visitors');
-
-  xit('should be able to find all dinosaurs of a particular species');
 
   xit('should be able to calculate the total number of visitors per day');
 
